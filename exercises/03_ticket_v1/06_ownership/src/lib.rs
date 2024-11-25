@@ -51,12 +51,24 @@ impl Ticket {
 mod tests {
     use super::Ticket;
 
+
+    
     #[test]
     fn works() {
         let ticket = Ticket::new("A title".into(), "A description".into(), "To-Do".into());
+
+        if ticket.status() == "To-Do" {
+            // We haven't covered the `println!` macro yet,
+            // but for now it's enough to know that it prints 
+            // a (templated) message to the console
+            println!("Your next task is: {}", ticket.title());
+        }
+
         // If you change the signatures as requested, this should compile:
         // we can call these methods one after the other because they borrow `self`
         // rather than taking ownership of it.
+        
+
         assert_eq!(ticket.title(), "A title");
         assert_eq!(ticket.description(), "A description");
         assert_eq!(ticket.status(), "To-Do");
