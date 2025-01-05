@@ -4,12 +4,12 @@
 //  Look at the compiler error to get familiar with what it looks like.
 //  Then delete the code below and move on to the next exercise.
 
-trait PartialEq {
-    fn eq(&self,_other:&Self) -> bool;
-}
+// it implement in another crate
+use std::cmp::PartialEq;
 
-impl PartialEq for u32 {
-    fn eq(&self, _other: &Self) -> bool {
-        todo!()
-    }
-}
+// Orphan rule violation
+// impl PartialEq for u32 {
+//     fn eq(&self, _other: &Self) -> bool {
+//         todo!()
+//     }
+// }
